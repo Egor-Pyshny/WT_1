@@ -5,3 +5,5 @@
 /build/classes/java/test/
 /.idea/
 /src/main/java/META-INF/
+/src/META-INF/
+/out/
