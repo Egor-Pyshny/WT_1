@@ -29,3 +29,11 @@ jobs:
 
       - name: Display test results
         run: cat build/test-results/test/*.xml
+
+      - name: Count tests and errors
+        run: |
+          tests=$(cat build/test-results/test/*.xml | grep -oP 'tests="\K[^"]+' | awk '{s+=$1} END {print s}')
+          errors=$(cat build/test-results/test/*.xml | grep -oP 'errors="\K[^"]+' | awk '{s+=$1} END {print s}')
+          echo "Total tests: $tests"
+          echo "Total errors: $errors"
+        id: count
