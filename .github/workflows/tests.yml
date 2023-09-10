@@ -22,7 +22,10 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build with Gradle
-        run: ./gradlew build  # Здесь используйте Gradle Wrapper для сборки проекта
+        run: ./gradlew build 
 
       - name: Run Tests
         run: ./gradlew test
+
+      - name: Display test results
+        run: cat build/test-results/test/*.xml
